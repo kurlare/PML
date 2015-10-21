@@ -39,6 +39,7 @@ dim(testing)
 col_samp <- training[1:20, grep("classe|total|user|time|belt_x", colnames(training))]
 head(col_samp[, c(1,4,6,7,13)])
 ```
+
 We see the user name, a time stamp for the activity, a sensor summary statistic, a sensor measurement, and the classification `classe`. The classification is a factor variable with 5 levels, each corresponding to a different activity:
 
 *Class A - Exactly according to specification (i.e., doing the exercise correctly).
@@ -77,25 +78,25 @@ With so many variables and so many possible relationships, visually identifying 
 belt_accel_plot <- ggplot(training, aes(x = training$total_accel_belt,
                           colour = classe, fill = classe)) + 
                           geom_density(alpha = 0.3) +
-                          labs(title = "Belt Accel Density", x = "Total Belt Accel",
+                          labs(title = "Belt", x = "Total Belt Accel",
                             y = "Density")
 
 arm_accel_plot <- ggplot(training, aes(x = training$total_accel_arm, 
                          colour = classe, fill = classe)) + 
                          geom_density(alpha = 0.3) +
-                         labs(title = "Arm Accel Density", x = "Total Arm Accel",
+                         labs(title = "Arm", x = "Total Arm Accel",
                             y = "Density")
 
 forearm_accel_plot <- ggplot(training, aes(x = training$total_accel_forearm,
                          colour = classe, fill = classe)) +
                          geom_density(alpha = 0.3) +
-                         labs(title = "Forearm Accel Density", x = "Total Forearm Accel",
+                         labs(title = "Forearm", x = "Total Forearm Accel",
                              y = "Density")
 
 dumbbell_accel_plot <- ggplot(training, aes(x = training$total_accel_dumbbell,
                          colour = classe, fill = classe)) +
                          geom_density(alpha = 0.3) +
-                         labs(title = "Dumbbell Accel Density", x = "Total Dumbbell Accel",
+                         labs(title = "Dumbbell", x = "Total Dumbbell Accel",
                              y = "Density")
 
 grid.arrange(belt_accel_plot, 
