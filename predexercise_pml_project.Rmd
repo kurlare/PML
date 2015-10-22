@@ -41,11 +41,11 @@ head(col_samp[, c(1,4,6,7,13)])
 ```
 We see the user name, a time stamp for the activity, a sensor summary statistic, a sensor measurement, and the classification `classe`. The classification is a factor variable with 5 levels, each corresponding to a different activity:
 
-*Class A - Exactly according to specification (i.e., doing the exercise correctly).
-*Class B - Throwing the Elbow to the front.
-*Class C - Lifting the Dumbbell only halfway.
-*Class D - Lowering the Dumbbell only halfway.
-*Class E - Throwing the Hips to the front.
+* Class A - Exactly according to specification (i.e., doing the exercise correctly).
+* Class B - Throwing the Elbow to the front.
+* Class C - Lifting the Dumbbell only halfway.
+* Class D - Lowering the Dumbbell only halfway.
+* Class E - Throwing the Hips to the front.
 
 `classe` is the outcome we will ultimately want our model to predict, but for now there is more exploring to do.
 
@@ -107,15 +107,15 @@ grid.arrange(belt_accel_plot,
 
 ```
 
-THere are several interpretations we can make with this figure.
+THere are several interpretations we can make with this figure:
 
-*Belt acceleration is highest for the ‘E’ class, whose description is ‘throwing hips to the front’. It also has an otherwise clear bi-modal distribution (you either are really moving your hips or you aren’t moving them much at all), with the A class clearly distributed closer to 0.
+- Belt acceleration is highest for the ‘E’ class, whose description is ‘throwing hips to the front’. It also has an otherwise clear bi-modal distribution (you either are really moving your hips or you aren’t moving them much at all), with the A class clearly distributed closer to 0.
 
-*Arm acceleration is mostly consistent across different movements, with the exception of lowering the dumbbell only halfway (D) and throwing the hips forward (E).
+-  Arm acceleration is mostly consistent across different movements, with the exception of lowering the dumbbell only halfway (D) and throwing the hips forward (E).
 
-*Forearm acceleration appears to have relatively similiar distributions across all classes, with less variability in the correct motion.
+-  Forearm acceleration appears to have relatively similiar distributions across all classes, with less variability in the correct motion.
 
-*Dumbbell acceleration is lower for motions that restrict dumbbell motion (C and D), and higher for full, correct motion (A).
+-  Dumbbell acceleration is lower for motions that restrict dumbbell motion (C and D), and higher for full, correct motion (A).
 
 The data reflects the classification variables nicely, and this will give us some confidence that sensor variables besides `total_accel` will accurately reflect the different movements.
 
