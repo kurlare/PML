@@ -107,7 +107,7 @@ grid.arrange(belt_accel_plot,
 
 ```
 
-THere are several interpretations we can make with this figure:
+There are several interpretations we can make with this figure:
 
 - Belt acceleration is highest for the ‘E’ class, whose description is ‘throwing hips to the front’. It also has an otherwise clear bi-modal distribution (you either are really moving your hips or you aren’t moving them much at all), with the A class clearly distributed closer to 0.
 
@@ -148,7 +148,7 @@ ________________________________________________________________________________
 
 ####Model Selection
 
-Moving forward, we have narrowed down our predictors from 159 to 53. We will use randomForest as our model. Random forest is a good choice for this data set because we are mostly interested in prediction, not interpretability. Cross validation is achieved within the random forest algorithm itself.
+Moving forward, we have narrowed down our predictors from 159 to 52. We will use randomForest as our model. Random forest is a good choice for this data set because we are mostly interested in prediction, not interpretability. Cross validation is achieved within the random forest algorithm itself.
 
 Each tree is built using a random sampling of our original predictors in the training set. Some of the rows for predictors of the tree are held out, and this group is called the out-of-bag sample. When the tree is fully grown and there are no more splits to be made, the OOB samples are run through the tree. How accurately the tree predicts these OOB samples yields an error rate. The OOB error rate reported in the final model is the rate for how all trees, in aggregate, predicted the OOB samples. _This is akin to separating data into train and test sets to estimate the out-of-sample error rate._
 
